@@ -19,10 +19,10 @@ return array (
     array (
       'default' => 
       array (
-        'host' => '127.0.0.1',
-        'dbname' => 'magento',
-        'username' => 'root',
-        'password' => 'root123',
+        'host' => '172.18.0.3',
+        'dbname' => 'magento2',
+        'username' => 'user',
+        'password' => 'password',
         'active' => '1',
       ),
     ),
