@@ -1,23 +1,23 @@
 <?php
 return array (
-  'backend' => 
+  'backend' =>
   array (
     'frontName' => 'admin',
   ),
-  'crypt' => 
+  'crypt' =>
   array (
-    'key' => '585f85920d71a12ef3821e869b601dce',
+    'key' => 'c6d1658fe64114cc90a15711e69345e2',
   ),
-  'session' => 
+  'session' =>
   array (
     'save' => 'files',
   ),
-  'db' => 
+  'db' =>
   array (
     'table_prefix' => '',
-    'connection' => 
+    'connection' =>
     array (
-      'default' => 
+      'default' =>
       array (
         'host' => '172.18.0.3',
         'dbname' => 'magento2',
@@ -27,16 +27,16 @@ return array (
       ),
     ),
   ),
-  'resource' => 
+  'resource' =>
   array (
-    'default_setup' => 
+    'default_setup' =>
     array (
       'connection' => 'default',
     ),
   ),
   'x-frame-options' => 'SAMEORIGIN',
   'MAGE_MODE' => 'default',
-  'cache_types' => 
+  'cache_types' =>
   array (
     'config' => 1,
     'layout' => 1,
@@ -52,8 +52,8 @@ return array (
     'translate' => 1,
     'config_webservice' => 1,
   ),
-  'install' => 
+  'install' =>
   array (
-    'date' => 'Mon, 03 Jun 2019 19:36:38 +0000',
+    'date' => 'Mon, 17 Jun 2019 15:07:35 +0000',
   ),
 );
