@@ -1,8 +1,8 @@
 node('slave_node')
 {
     //agent any
-    stages
-    {
+    //stages
+    //{
         stage ("syntax error check")
         {
             steps
@@ -37,7 +37,7 @@ node('slave_node')
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
       }*/
-  }  
+  //}  
 
     
 }
