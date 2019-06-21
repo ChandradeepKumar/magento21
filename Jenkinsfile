@@ -1,6 +1,6 @@
 pipeline
 {
-    agent  ubuntu
+    agent jenkins_slave
     stages
     {
         
