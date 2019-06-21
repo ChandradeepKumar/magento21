@@ -1,4 +1,4 @@
-pipeline
+node('slave_node')
 {
     agent any
     stages
