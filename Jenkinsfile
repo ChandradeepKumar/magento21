@@ -1,7 +1,10 @@
-node (slave_node.slave) 
-{ 
-    	stage('test')
-	{ 
-        	echo "hello" 
-    	} 
+pipeline
+{
+	node (slave_node.slave) 
+	{	 
+    		stage('test')
+		{ 
+        		echo "hello" 
+    		} 
+	}
 }
