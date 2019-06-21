@@ -1,21 +1,17 @@
-#!groovy
-import hudson.model.*
-import hudson.EnvVars
-import groovy.json.*
-import java.net.URL 
-
-def test()
+pipeline
 {
-	echo "demo";
-}
-
-node('slave_node')
-{
-    //agent any
-    //stages
-    //{
+    agent any
+    stages
+    {
+        
+       
         stage ("syntax error check")
-	test()
+        {
+            steps
+            {
+                echo "This is Demo"
+            }
+        }
 	 
 	/*stage ("sonar")
         {
@@ -26,24 +22,24 @@ node('slave_node')
             }
         } */
 	
-	    /*stage ("Image Build")
+	    stage ("Image Build")
 	    {
 	        steps
 	        {
 		          sh 'docker build -t magento_21 .' //build image
 	        }
-	    }*/
+	    }
   
   
-	    /*stage('Image Run')
+	    stage('Image Run')
       {
           steps
           {
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }*/
-  //}  
+      }
+  }  
 
     
 }
