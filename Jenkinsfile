@@ -1,6 +1,6 @@
 pipeline
 {
-    agent  any
+    agent  slave_node
     stages
     {
         
@@ -22,22 +22,22 @@ pipeline
             }
         } */
 	
-	    stage ("Image Build")
+	    /*stage ("Image Build")
 	    {
 	        steps
 	        {
 		          sh 'docker build -t magento_21 .' //build image
 	        }
-	    }
+	    }*/
   
   
-	    stage('Image Run')
+	    /*stage('Image Run')
       {
           steps
           {
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
-          }
+          }*/
       }
   }  
 
