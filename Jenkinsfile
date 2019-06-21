@@ -1,12 +1,21 @@
+#!groovy
+import hudson.model.*
+import hudson.EnvVars
+import groovy.json.*
+import java.net.URL 
+
+def test()
+{
+	echo "demo";
+}
+
 node('slave_node')
 {
     //agent any
     //stages
     //{
         stage ("syntax error check")
-	{
-		echo "hello";
-	}
+	test()
 	 
 	/*stage ("sonar")
         {
