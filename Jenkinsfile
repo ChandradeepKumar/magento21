@@ -37,8 +37,8 @@ pipeline
           {
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
-          }*/
-      }
+          }
+      }*/
   }  
 
     
