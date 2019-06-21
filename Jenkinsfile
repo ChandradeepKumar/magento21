@@ -1,6 +1,6 @@
-pipeline
+node
 {
-    node slave_node
+    agent any
     stages
     {
         
