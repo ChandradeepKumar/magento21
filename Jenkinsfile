@@ -1,6 +1,6 @@
 pipeline
 {
-    agent any
+    node slave_node
     stages
     {
         
