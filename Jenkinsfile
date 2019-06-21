@@ -1,4 +1,4 @@
-node (slave_node) 
+node (slave_node.slave) 
 { 
     	stage('test')
 	{ 
