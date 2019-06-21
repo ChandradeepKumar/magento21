@@ -1,17 +1,12 @@
-def.test()
-{
-	echo "demo"
-}
-
-
-
 node('slave_node')
 {
     //agent any
     //stages
     //{
         stage ("syntax error check")
-        test()
+	{
+		echo "hello";
+	}
 	 
 	/*stage ("sonar")
         {
