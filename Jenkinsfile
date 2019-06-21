@@ -1,6 +1,6 @@
 node('slave_node')
 {
-    agent any
+    //agent any
     stages
     {
         stage ("syntax error check")
