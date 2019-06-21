@@ -1,6 +1,6 @@
 pipeline
 {
-    agent  slave_node
+    agent  ubuntu
     stages
     {
         
