@@ -1,6 +1,6 @@
-node
+pipeline
 {
-    agent any
+    node ubuntu
     stages
     {
         
