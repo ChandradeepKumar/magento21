@@ -13,6 +13,13 @@ pipeline
             }
         }
 	 
+	 stage ("unit test")
+	    {
+		    steps
+		    {
+			    sh 'vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Nagarro/Designashade/Test/Unit/Model/DesignashadefacadeTest.php '
+		    }
+	    }
 	/*stage ("sonar")
         {
             steps
