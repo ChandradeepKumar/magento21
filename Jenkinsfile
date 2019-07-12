@@ -21,14 +21,14 @@ pipeline
 			    sh 'vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Nagarro/Designashade/Test/Unit/Model/DesignashadefacadeTest.php '
 		    }
 	    }
-	/*stage ("sonar")
+	stage ("sonar")
         {
             steps
             {
-                //sh 'sonar-scanner -Dsonar.projectKey="abc" -Dsonar.sources=.'
-                sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
+                sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.projectKey="abc" -Dsonar.projectname=serena -Dsonar.language=php -Dsonar.sources=.'
+                //sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
-        } */
+        } 
 	
 	    stage ("Image Build")
 	    {
