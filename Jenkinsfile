@@ -17,12 +17,14 @@ pipeline
 	def myImg
     	stage ("Build image") 
 	{
+		steps{
         // download the dockerfile to build from
         	git 'https://github.com/ChandradeepKumar/magento21.git'
 
         // build our docker image
 		
         	myImg = docker.build 'my-image:snapshot'
+		}
     	}
 	    
 	stage ("Get Source") 
