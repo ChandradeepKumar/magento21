@@ -13,6 +13,16 @@ pipeline
             }
         }
 	
+	def myImg
+    	stage ("Build image") 
+	{
+        // download the dockerfile to build from
+        	git 'https://github.com/ChandradeepKumar/magento21.git'
+
+        // build our docker image
+        	myImg = docker.build 'my-image:snapshot'
+    	}
+	    
 	stage ("Get Source") 
 	{
         // run a command to get the source code download
@@ -23,8 +33,8 @@ pipeline
 			{
 				script
 				{
-				myImage = docker.image("php:latest")
-				myImage.pull()
+				//myImage = docker.image("php:latest")
+				//myImage.pull()
         			myImage.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
