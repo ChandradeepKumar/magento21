@@ -1,17 +1,17 @@
 pipeline
 {
 	agent any
-    stages
-    {
+    //stages
+    //{
         
        
-        stage ("syntax error check")
+        /*stage ("syntax error check")
         {
             steps
             {
                 echo "This is Demo"
             }
-        }
+        }*/
 	 
 	stage ("Get Source") 
 	{
@@ -21,7 +21,7 @@ pipeline
             		//sh "rm -rf gradle-greetings"
             		sh "git clone https://github.com/ChandradeepKumar/magento21.git"
         	}
-    }    
+    	}    
 	    
 	 /*stage ("unit test")
 	    {
@@ -57,7 +57,7 @@ pipeline
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
       }*/
-  }  
+  //}  
 
     
 }
