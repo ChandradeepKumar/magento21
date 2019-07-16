@@ -13,7 +13,17 @@ pipeline
             }
         }
 	 
-	 stage ("unit test")
+	stage ("Get Source") 
+	{
+        // run a command to get the source code download
+        	magento21.inside('-v /home/git/repos:/home/git/repos') 
+		{
+            		//sh "rm -rf gradle-greetings"
+            		sh "git clone https://github.com/ChandradeepKumar/magento21.git"
+        	}
+    }    
+	    
+	 /*stage ("unit test")
 	    {
 		    steps
 		    {
@@ -46,7 +56,7 @@ pipeline
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }
+      }*/
   }  
 
     
