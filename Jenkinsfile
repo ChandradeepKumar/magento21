@@ -1,7 +1,7 @@
 pipeline
 {
 	agent any
-	def myImg
+	
     stages
     {
         
@@ -15,17 +15,7 @@ pipeline
         }
 	
 	
-    	stage ("Build image") 
-	{
-		steps{
-        // download the dockerfile to build from
-        	git 'https://github.com/ChandradeepKumar/magento21.git'
-
-        // build our docker image
-		
-        	myImg = docker.build 'my-image:snapshot'
-		}
-    	}
+    	
 	    
 	stage ("Get Source") 
 	{
@@ -37,9 +27,9 @@ pipeline
 			{
 				script
 				{
-				//myImage = docker.image("php:latest")
-				//myImage.pull()
-        			myImg.inside('-v /home/git/repos:/home/git/repos') 
+				myImage = docker.image("php:latest")
+				myImage.pull()
+        			myImageg.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
 					//sh 'apt-get -y install git'
