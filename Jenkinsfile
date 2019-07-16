@@ -16,12 +16,16 @@ pipeline
 	stage ("Get Source") 
 	{
         // run a command to get the source code download
-		steps {
-        	magento21.inside('-v /home/git/repos:/home/git/repos') 
+		myImage = docker.image("ubuntu:latest")
+		myImage.pull()
+		steps 
 		{
+        		myImage.inside('-v /home/git/repos:/home/git/repos') 
+			{
             		//sh "rm -rf gradle-greetings"
-			sh "git clone https://github.com/ChandradeepKumar/magento21.git"
-		}}
+				sh "git clone https://github.com/ChandradeepKumar/magento21.git"
+			}
+		}
     	}    
 	    
 	 /*stage ("unit test")
