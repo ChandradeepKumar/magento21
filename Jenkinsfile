@@ -1,8 +1,8 @@
 pipeline
 {
 	agent any
-    //stages
-    //{
+    stages
+    {
         
        
         /*stage ("syntax error check")
@@ -57,7 +57,7 @@ pipeline
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
       }*/
-  //}  
+  }  
 
     
 }
