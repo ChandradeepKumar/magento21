@@ -29,7 +29,7 @@ pipeline
 				{
 				myImage = docker.image("php:latest")
 				myImage.pull()
-        			myImageg.inside('-v /home/git/repos:/home/git/repos') 
+        			myImage.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
 					//sh 'apt-get -y install git'
