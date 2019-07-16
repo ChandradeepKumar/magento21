@@ -21,7 +21,7 @@ pipeline
 			
 			steps 
 			{
-				scripts
+				script
 				{
 				myImage = docker.image("ubuntu:latest")
 				myImage.pull()
