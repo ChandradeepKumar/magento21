@@ -1,6 +1,7 @@
 pipeline
 {
 	agent any
+	def myImg
     stages
     {
         
@@ -13,7 +14,7 @@ pipeline
             }
         }
 	
-	def myImg
+	
     	stage ("Build image") 
 	{
         // download the dockerfile to build from
