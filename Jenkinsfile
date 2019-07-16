@@ -19,10 +19,11 @@ pipeline
 		
 		scripts
 		{
-			myImage = docker.image("ubuntu:latest")
-			myImage.pull()
+			
 			steps 
 			{
+				myImage = docker.image("ubuntu:latest")
+				myImage.pull()
         			myImage.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
