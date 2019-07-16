@@ -29,7 +29,7 @@ pipeline
 				{
             		//sh "rm -rf gradle-greetings"
 					//sh 'apt-get -y install git'
-				sh "git clone https://github.com/ChandradeepKumar/magento21.git"
+				 sh "git clone https://github.com/ChandradeepKumar/magento21.git"
 					sh 'php -v'
 					echo "inside method is working fine"
 				}
