@@ -12,12 +12,12 @@ pipeline
                 echo "This is Demo"
             }
         }*/
-	 
+	myImage = docker.image("ubuntu:latest")
+	myImage.pull()
 	stage ("Get Source") 
 	{
         // run a command to get the source code download
-		myImage = docker.image("ubuntu:latest")
-		myImage.pull()
+		
 		steps 
 		{
         		myImage.inside('-v /home/git/repos:/home/git/repos') 
