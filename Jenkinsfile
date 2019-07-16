@@ -5,13 +5,13 @@ pipeline
     {
         
        
-        /*stage ("syntax error check")
+        stage ("syntax error check")
         {
             steps
             {
                 echo "This is Demo"
             }
-        }*/
+        }
 	
 	stage ("Get Source") 
 	{
@@ -28,7 +28,7 @@ pipeline
         			myImage.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
-					sh 'apt-get -y install git'
+					//sh 'apt-get -y install git'
 				sh "git clone https://github.com/ChandradeepKumar/magento21.git"
 				}
 				}
