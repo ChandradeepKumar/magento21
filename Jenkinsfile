@@ -12,18 +12,21 @@ pipeline
                 echo "This is Demo"
             }
         }*/
-	myImage = docker.image("ubuntu:latest")
-	myImage.pull()
+	
 	stage ("Get Source") 
 	{
         // run a command to get the source code download
-		
-		steps 
+		myImage = docker.image("ubuntu:latest")
+		myImage.pull()
+		scripts
 		{
-        		myImage.inside('-v /home/git/repos:/home/git/repos') 
+			steps 
 			{
+        			myImage.inside('-v /home/git/repos:/home/git/repos') 
+				{
             		//sh "rm -rf gradle-greetings"
 				sh "git clone https://github.com/ChandradeepKumar/magento21.git"
+				}
 			}
 		}
     	}    
