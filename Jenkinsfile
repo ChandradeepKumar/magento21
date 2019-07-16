@@ -1,7 +1,7 @@
 pipeline
 {
 	agent any
-	
+	def myImg
     stages
     {
         
@@ -14,7 +14,7 @@ pipeline
             }
         }
 	
-	def myImg
+	
     	stage ("Build image") 
 	{
 		steps{
