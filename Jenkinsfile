@@ -50,13 +50,15 @@ pipeline
 			{
 				script
 				{
-				myImage = docker.image("php:latest")
+				myImage = docker.image("ubuntu1:latest")
 				myImage.pull()
         			myImage.inside('-v /home/git/repos:/home/git/repos') 
 				{
             		//sh "rm -rf gradle-greetings"
 					//sh 'apt-get -y install git'
 				 //sh "git clone https://github.com/ChandradeepKumar/magento21.git"
+					sh '/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -h'
+
 					sh 'php -v'
 					echo "inside method is working fine"
 				}
