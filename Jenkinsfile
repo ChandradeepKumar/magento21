@@ -40,7 +40,7 @@ pipeline
     	}    
     	
 	    
-	stage ("Get Source") 
+	stage ("sonar") 
 	{
         // run a command to get the source code download
 		
