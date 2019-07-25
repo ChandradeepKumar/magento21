@@ -14,7 +14,7 @@ pipeline
             }
         }
 	
-	stage ("Get Source") 
+	/*stage ("Get Source") 
 	{
         // run a command to get the source code download
 		
@@ -37,10 +37,10 @@ pipeline
 				}
 			}
 		
-    	}    
+    	}    */
     	
 	    
-	stage ("sonar") 
+	/*stage ("sonar") 
 	{
         // run a command to get the source code download
 		
@@ -65,9 +65,9 @@ pipeline
 				}
 			}
 		
-    	}    
+    	}    */
 	    
-	 /*stage ("unit test")
+	 stage ("unit test")
 	    {
 		    steps
 		    {
@@ -100,7 +100,7 @@ pipeline
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }*/
+      }
   }  
 
     
