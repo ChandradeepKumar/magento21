@@ -79,7 +79,7 @@ pipeline
         {
             steps
             {
-                sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.projectKey="abc1" -Dsonar.projectname=serena1 -Dsonar.sources=.'
+                sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -h'
                 //sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
         } 
