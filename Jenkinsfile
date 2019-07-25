@@ -31,7 +31,7 @@ pipeline
             		//sh "rm -rf gradle-greetings"
 					//sh 'apt-get -y install git'
 				 //sh "git clone https://github.com/ChandradeepKumar/magento21.git"
-					sh '/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -h'
+					sh ' /opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -h'
 					echo "inside method is working fine"
 				}
 				}
