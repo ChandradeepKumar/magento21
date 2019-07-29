@@ -87,7 +87,7 @@ pipeline
 	    stage('Setup') {
             steps {
                 script {
-                    startZap(host: "127.0.0.1", port: 8090, timeout:500, zapHome: "/ZAP_2.8.0", sessionPath:"/somewhere/session.session", allowedHosts:['10.175.16.205']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
+                    startZap(host: "127.0.0.1", port: 8090, timeout:500, zapHome: "/ZAP_2.8.0", allowedHosts:['10.175.16.205']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
                 }
             }
         }
