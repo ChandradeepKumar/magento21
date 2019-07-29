@@ -67,7 +67,7 @@ pipeline
 		
     	}    */
 	    
-	 stage ("unit test")
+	 /*stage ("unit test")
 	    {
 		    steps
 		    {
@@ -83,17 +83,19 @@ pipeline
                 //sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
         } 
-	
+	*/
 	    stage('Setup') {
             steps {
                 script {
-                    startZap(host: "127.0.0.1", port: 8090, timeout:500, zapHome: "/ZAP_2.8.0", allowedHosts:['10.175.16.205']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
+                    startZap(host: "127.0.0.1", port: 8090, timeout:500, zapHome: "/ZAP_2.8.0", allowedHosts:['10.175.16.205']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used 
+			runZapCrawler(host: "https://localhost")
+			runZapAttack(userId: 5, scanPolicyName: "yourScanPolicy")
                 }
             }
         }
 	    
 	    
-	    stage ("Image Build")
+	    /*stage ("Image Build")
 	    {
 	        steps
 	        {
@@ -109,7 +111,7 @@ pipeline
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }
+      }*/
   }  
 
     
