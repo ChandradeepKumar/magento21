@@ -67,7 +67,7 @@ pipeline
 		
     	}    */
 	    
-	 /*stage ("unit test")
+	 stage ("unit test")
 	    {
 		    steps
 		    {
@@ -83,7 +83,7 @@ pipeline
                 //sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
             }
         } 
-	*/
+	
 	    stage('Setup') {
             steps {
                 script {
@@ -95,7 +95,7 @@ pipeline
         }
 	    
 	    
-	    /*stage ("Image Build")
+	    stage ("Image Build")
 	    {
 	        steps
 	        {
@@ -111,7 +111,7 @@ pipeline
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }*/
+      }
   }  
     
 }
