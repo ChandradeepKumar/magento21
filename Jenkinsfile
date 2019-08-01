@@ -113,25 +113,5 @@ pipeline
           }
       }*/
   }  
-post 
-    {
-        success 
-        {
-              
-            mail to: "chandradeep.kumar@nagarro.com",
-            subject: "SUCCESS: ${currentBuild.fullDisplayName}",
-            body: "successfull ${env.BUILD_URL}" 
- 
-
-            //emailext body: 'successful: ${env.BUILD_URL}', subject: 'Testing', to: 'chandradeep.kumar@nagarro.com'
-        }
-                
-        failure
-        {
-            emailext body: 'failure: ${env.BUILD_URL}' , subject: 'testing', to: 'chandradeep.kumar@nagarro.com'
-        }
-                //emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-                //step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])])
-    }
     
 }
