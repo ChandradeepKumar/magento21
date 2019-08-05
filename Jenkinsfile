@@ -113,13 +113,7 @@ pipeline
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
       }
-	    stage ('sonar report')
-	    {
-		    steps
-		    {
-			 sh 'curl http://sonar.sh.cn.ao.ericsson.se//api/resources?metrics=qi-quality-index,coverage,test_success_density&resource=54936 --output sonar-result.xml'
-		    }
-	    }
+	    
   }  
     
 }
