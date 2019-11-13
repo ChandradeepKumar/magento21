@@ -9,8 +9,8 @@ pipeline
 
         //booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        //choice(name: 'Magento', description: 'Pick something')
-	extendedChoice(Type:'checkbox' name: 'test123',description: 'pick up')
+        choice(name: 'Magento',coices: ['yes','No'], description: 'Pick something')
+	//extendedChoice(Type:'checkbox' name: 'test123',description: 'pick up')
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
