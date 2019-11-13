@@ -67,15 +67,15 @@ pipeline
 		
     	}    */
 	    
-	 stage ("unit test")
+	 /*stage ("unit test")
 	    {
 		    steps
 		    {
 			    sh 'chmod 0775 vendor/bin/phpunit '
 			    sh 'vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Nagarro/Designashade/Test/Unit/Model/DesignashadefacadeTest.php '
 		    }
-	    }
-	stage ("sonar")
+	    }*/
+	/*stage ("sonar")
         {
             steps
             {
@@ -83,9 +83,9 @@ pipeline
                 //sh '/opt/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner'
 		    sh 'curl http://sonar.sh.cn.ao.ericsson.se//api/resources?metrics=qi-quality-index,coverage,test_success_density&resource=54936 --output sonar-result.xml'
             }
-        } 
+        } */
 	
-	    stage('Setup') {
+	   /* stage('Setup') {
             steps {
                 script {
                     startZap(host: "127.0.0.1", port: 8090, timeout:500, zapHome: "/ZAP_2.8.0", allowedHosts:['10.175.16.205']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used 
@@ -93,26 +93,26 @@ pipeline
 			runZapAttack(userId: 5, scanPolicyName: "yourScanPolicy")
                 }
             }
-        }
+        }*/
 	    
 	    
-	    stage ("Image Build")
+	   /* stage ("Image Build")
 	    {
 	        steps
 	        {
 		          sh 'docker build -t magento_21 .' //build image
 	        }
-	    }
+	    }*/
   
   
-	    stage('Image Run')
+	   /* stage('Image Run')
       {
           steps
           {
             sh 'docker rm -f cont1'
             sh 'docker run --name cont1 -i -d -p 9096:80 magento_21 '
           }
-      }
+      }*/
 	    
   }  
     
