@@ -13,7 +13,7 @@ pipeline
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
-	   booleanParam(defaultValue: true, name: 'CheckIn', description: 'Process all')
+	   booleanParam(defaultValue: true, name: 'CheckIn', description: 'Call another build')
     }
    
   
