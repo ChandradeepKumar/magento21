@@ -22,7 +22,7 @@ pipeline
     {
         stage ('Invoke_pipelineA') {
             steps {
-		    if($CheckIn == "Yes")
+		    if($CheckIn == "yes")
 		    {
 			    echo "Checkbox is checked !!!!"
 		    }
