@@ -22,8 +22,14 @@ pipeline
     {
         stage ('Invoke_pipelineA') {
             steps {
-                build job: 'Magento'
-                
+		    if($CheckIn == "Yes")
+		    {
+			    echo "Checkbox is checked !!!!"
+		    }
+		    else
+		    {
+			    echo "Not Checked !!!"
+		    }
             }
         }
        
