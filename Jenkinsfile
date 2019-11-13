@@ -13,10 +13,11 @@ pipeline
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }*/
-    def testParam = checkBox("Magento" // name
-                 
-                
-                "Multi-select" // description
+    def testParam = checkBox("opt", // name
+                "opt1,opt2,opt3", // values
+                "opt1", //default value
+                0, //visible item cnt
+                "Multi-select", // description
                 )
 
 	properties
