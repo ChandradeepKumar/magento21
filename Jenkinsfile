@@ -17,10 +17,10 @@ pipeline
   
 	agent any
 	
-    /*stages
+    stages
     {
         
-       stage ('Invoke_pipelineA') {
+       /*stage ('Invoke_pipelineA') {
             steps {
                 build job: 'Magento', parameters: [
                 choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
