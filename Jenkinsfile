@@ -9,7 +9,7 @@ pipeline
 
         //booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'Magento', choices: ['Yes', 'No'], description: 'Pick something')
+        choice(type: 'check boxes' name: 'Magento', choices: ['Yes', 'No'], description: 'Pick something')
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
@@ -23,7 +23,7 @@ pipeline
        /*stage ('Invoke_pipelineA') {
             steps {
                 build job: 'Magento', parameters: [
-                choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+                choice(name: 'Magento', choices: ['Yes','No'], description: 'Pick something')
                 ]
             }
         }*/
