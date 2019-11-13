@@ -1,11 +1,22 @@
 pipeline
 {
+	
+	
+   
+    
+  
 	agent any
 	
     stages
     {
         
-       
+       stage ('Invoke_pipelineA') {
+            steps {
+                build job: 'Magento', parameters: [
+                choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+                ]
+            }
+        }
         stage ("syntax error check")
         {
             steps
