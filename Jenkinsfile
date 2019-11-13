@@ -12,7 +12,7 @@ pipeline
 	//extendedChoice(ParameterType:'checkbox' name: 'test123',description: 'pick up')
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-       booleanParam(name: 'CheckIn',Value: true) 
+       booleanParam(name: 'CheckIn',value: true) 
     }
    
   
