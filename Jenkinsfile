@@ -12,7 +12,7 @@ pipeline
 	//extendedChoice(ParameterType:'checkbox' name: 'test123',description: 'pick up')
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-       booleanParam(name: 'CheckIn',defaultValue: true) 
+       booleanParam(name: 'CheckIn',Value: true) 
     }
    
   
@@ -25,7 +25,7 @@ pipeline
 			steps {
 				script
 				{
-					if(CheckIn == "yes")
+					if(CheckIn == "true")
 					{
 						build job: 'Magento'
 					}
