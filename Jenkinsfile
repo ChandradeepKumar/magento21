@@ -2,29 +2,19 @@ pipeline
 {
 	
 	
-   /*parameters {
+   parameters {
         //string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
         //text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
         //booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(ParameterType: 'checkbox' name: 'Magento', description: 'Pick something')
+        choice(name: 'Magento', description: 'Pick something')
+	checkbox(name: 'test123',description: 'pick up')
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    }*/
-    def testParam = checkBox("opt", // name
-                "opt1,opt2,opt3", // values
-                "opt1", //default value
-                0, //visible item cnt
-                "Multi-select", // description
-                )
-
-	properties
-	(
-  		[parameters([testParam])]
-		
-	)
+    }
+   
   
 	agent any
 	
