@@ -10,7 +10,7 @@ pipeline
 				{
 					if(CheckIn == "yes")
 					{
-						echo "Checkbox is checked !!!!"
+						build job: 'Magento'
 					}
 					else
 					{
