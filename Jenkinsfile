@@ -23,8 +23,11 @@ pipeline
 	stages
 	{
 		stage ('Invoke_pipelineA') {
-			build job: 'serena_ci/master',
-			parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
+			steps
+			{
+				build job: 'serena_ci/master',
+				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
+			}
 		}
 	}
 }
