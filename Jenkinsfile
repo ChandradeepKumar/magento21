@@ -30,7 +30,7 @@ pipeline
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
 			}
 		}
-		stage ('Invoke_pipelineA') {
+		stage ('Invoke_pipelineB') {
 			steps {
 				script
 				{
