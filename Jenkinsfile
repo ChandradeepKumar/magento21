@@ -13,7 +13,7 @@ pipeline
 
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
-	   booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
+	   //booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
 	   booleanParam(defaultValue: true, name: 'Check',description: ' ')
     }
    
@@ -23,13 +23,13 @@ pipeline
 
 	stages
 	{
-		stage ('Invoke_pipelineA') {
+		/*stage ('Invoke_pipelineA') {
 			steps
 			{
 				build job: 'serena_ci/master',
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
 			}
-		}
+		}*/
 		stage ('Invoke_pipelineB') {
 			steps {
 				script
