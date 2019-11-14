@@ -14,7 +14,7 @@ pipeline
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
 	   booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
-	   booleanParam(defaultValue: true, name: 'CheckIn2',description: ' ')
+	   booleanParam(defaultValue: true, name: 'Checkout',description: ' ')
     }
    
   
@@ -34,7 +34,7 @@ pipeline
 			steps {
 				script
 				{
-					if(CheckIn2 == "true")
+					if(Checkout == "true")
 					{
 						build job: 'Magento'
 						//build job: 'serena_ci/master'
