@@ -28,7 +28,8 @@ pipeline
 				{
 					if(CheckIn == "true")
 					{
-						build job: 'Magento'
+						//build job: 'Magento'
+						build job: 'serena_ci/master'
 					}
 					else
 					{
