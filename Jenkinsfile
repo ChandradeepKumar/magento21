@@ -14,6 +14,7 @@ pipeline
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
 	   booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
+	   booleanParam(defaultValue: true, name: 'CheckIn2',description: ' ')
     }
    
   
@@ -27,6 +28,22 @@ pipeline
 			{
 				build job: 'serena_ci/master',
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
+			}
+		}
+		stage ('Invoke_pipelineA') {
+			steps {
+				script
+				{
+					if(CheckIn2 == "true")
+					{
+						build job: 'Magento'
+						//build job: 'serena_ci/master'
+					}
+					else
+					{
+						echo "Not Checked !!!"
+					}
+				}
 			}
 		}
 	}
