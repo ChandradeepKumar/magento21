@@ -23,14 +23,14 @@ pipeline
 
 	stages
 	{
-		/*stage ('Invoke_pipelineA') {
+		stage ('deploy') {
 			steps
 			{
 				build job: 'serena_ci/master',
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
 			}
-		}*/
-		stage ('Invoke_pipelineB') {
+		}
+		/*stage ('Invoke_pipelineB') {
 			steps {
 				script
 				{
@@ -45,6 +45,6 @@ pipeline
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
