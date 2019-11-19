@@ -14,7 +14,7 @@ pipeline
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
 	   //booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
-	   booleanParam(defaultValue: true, name: 'Check',description: ' ')
+	   booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
     }
    
   
@@ -23,11 +23,19 @@ pipeline
 
 	stages
 	{
-		stage ('deploy') {
+		/*stage ('deploy') {
 			steps
 			{
 				build job: 'serena_ci/master',
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
+			}
+		}*/
+		
+		
+		stage ('deploy') {
+			steps
+			{
+				sh 'echo "it is working fine"'
 			}
 		}
 		/*stage ('Invoke_pipelineB') {
