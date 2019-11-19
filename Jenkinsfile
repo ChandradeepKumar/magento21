@@ -23,21 +23,21 @@ pipeline
 
 	stages
 	{
-		/*stage ('deploy') {
+		stage ('deploy') {
 			steps
 			{
-				build job: 'serena_ci/master',
+				build job: 'test 123 456 abc',
 				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
 			}
-		}*/
+		}
 		
 		
-		stage ('deploy') {
+		/*stage ('deploy') {
 			steps
 			{
 				sh 'echo "it is working fine"'
 			}
-		}
+		}*/
 		/*stage ('Invoke_pipelineB') {
 			steps {
 				script
