@@ -55,4 +55,45 @@ pipeline
 			}
 		}*/
 	}
+	post 
+    {
+        success 
+        {      
+            //mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
+            //subject: "Build Success: ${currentBuild.fullDisplayName}", 
+            //body: "View build report here: ${env.BUILD_URL}",
+            
+          emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
+            body: "View build report here: ${env.BUILD_URL}"
+		<TABLE>
+		  <TR>
+			if(LogicAppDeploy == "true")
+			{
+				<TD> service is : </TD>
+				<TD> $LogicAppDeploy </td>
+			}
+		  </TR>
+		  
+		</TABLE>,
+		
+            subject: "Build Success: ${currentBuild.fullDisplayName}", 
+            mimeType: 'text/html', 
+            to: 'chandradeep.kumar@nagarro.com'
+        }
+                
+        failure
+        {
+            //mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
+            //subject: "Build Failure: ${currentBuild.fullDisplayName}",
+            //body: "View build report here: ${env.BUILD_URL}" 
+            //emailext body: "failure: ${env.BUILD_URL}" , subject: 'Build Failure', to: 'vineet.sajwan@nagarro.com,chandradeep.kumar@nagarro.com'
+          //emailext  attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html",body: "successful: ${env.BUILD_URL}", subject: 'Testing', mimeType: 'text/html', to: 'chandradeep.kumar@nagarro.com'
+          
+          emailext  //attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
+            body: "View build report here: ${env.BUILD_URL}", 
+            subject: "Build FAILURE: ${currentBuild.fullDisplayName}", 
+            mimeType: 'text/html', 
+            to: 'chandradeep.kumar@nagarro.com'
+        }
+    }
 }
