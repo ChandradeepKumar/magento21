@@ -72,17 +72,17 @@ pipeline
 void sendmail(LogicApp1Deploy)
 {
 	emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            body:"""View build report here:
+            body: "View build report here:
 		<TABLE>
 		  <TR>
 			if($LogicApp1Deploy == "true")
 			{
 				<TD> working </TD>
-				<TD> fine </td>
+				<TD> fine </TD>
 			}
 		  </TR>
 		  
-		</TABLE>""",
+		</TABLE>",
 		
             subject: "Build Success: ", 
             mimeType: 'text/html', 
