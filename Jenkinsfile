@@ -64,17 +64,17 @@ pipeline
             //body: "View build report here: ${env.BUILD_URL}",
             
           emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            body: "View build report here: ${env.BUILD_URL}"
+            body: """View build report here: ${env.BUILD_URL}
 		<TABLE>
 		  <TR>
-			if(LogicAppDeploy == "true")
+			if(LogicApp1Deploy == "true")
 			{
 				<TD> service is : </TD>
 				<TD> $LogicAppDeploy </td>
 			}
 		  </TR>
 		  
-		</TABLE>,
+		</TABLE>""",
 		
             subject: "Build Success: ${currentBuild.fullDisplayName}", 
             mimeType: 'text/html', 
@@ -96,4 +96,5 @@ pipeline
             to: 'chandradeep.kumar@nagarro.com'
         }
     }
+	
 }
