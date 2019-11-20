@@ -27,7 +27,7 @@ pipeline
 			steps
 			{
 				build job: 'test 123 456 abc',
-				parameters: [[$class: 'BooleanParameterValue', name: 'CheckIn', value: params.CheckIn]]
+				parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 			}
 		}
 		
@@ -55,30 +55,15 @@ pipeline
 			}
 		}*/
 	}
-	post 
+    post 
     {
         success 
         {      
             //mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
             //subject: "Build Success: ${currentBuild.fullDisplayName}", 
             //body: "View build report here: ${env.BUILD_URL}",
-            
-          emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            body: """View build report here: ${env.BUILD_URL}
-		<TABLE>
-		  <TR>
-			if(LogicApp1Deploy == "true")
-			{
-				<TD> service is : </TD>
-				<TD> $LogicAppDeploy </td>
-			}
-		  </TR>
-		  
-		</TABLE>""",
-		
-            subject: "Build Success: ${currentBuild.fullDisplayName}", 
-            mimeType: 'text/html', 
-            to: 'chandradeep.kumar@nagarro.com'
+          echo 'fine working'
+          sendmail(params.LogicApp1click)
         }
                 
         failure
@@ -97,4 +82,25 @@ pipeline
         }
     }
 	
+	
 }
+void sendmail(LogicApp1Deploy)
+{
+	emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
+            body:"""View build report here:
+		<TABLE>
+		  <TR>
+			if($LogicApp1Deploy == "true")
+			{
+				<TD> working </TD>
+				<TD> fine </td>
+			}
+		  </TR>
+		  
+		</TABLE>""",
+		
+            subject: "Build Success: ", 
+            mimeType: 'text/html', 
+            to: 'chandradeep.kumar@nagarro.com'
+}
+
