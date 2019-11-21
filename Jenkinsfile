@@ -71,23 +71,25 @@ pipeline
 }
 void sendmail(LogicApp1click)
 {
-	emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            body: "build report here:"
-		//<TABLE>
-		  //<TR>
-			if($LogicApp1click == "true")
-			{
-				//<TD> working </TD>
-				//<TD> fine </TD>
-			sh 'echo "hello"
-			}
-		 // </TR>
-		  
-		//</TABLE>",
-		,
+	if($LogicApp1click == "true")
+	{			
+		emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
+            	body: "build report here:
 		
-            subject: "Build Success: ", 
-            mimeType: 'text/html', 
-            to: 'chandradeep.kumar@nagarro.com'
+		sh 'echo "true"
+			/*<TABLE>
+		  		<TR>
+					<TD> working </TD>
+					<TD> fine </TD>
+			
+		 		</TR>
+		  
+			</TABLE>*/",
+		
+            	subject: "Build Success: ", 
+            	mimeType: 'text/html', 
+            	to: 'chandradeep.kumar@nagarro.com'
+	}
+	
 }
 
