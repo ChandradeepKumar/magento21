@@ -76,7 +76,7 @@ void sendmail(LogicApp1click)
 		emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
             	body: 
 		
-		""""build report here:
+		"""build report here:
 			<TABLE>
 		  		<TR>
 					<TD> working </TD>
