@@ -74,7 +74,7 @@ void sendmail(LogicApp1click)
 	if($LogicApp1click == "true")
 	{			
 		emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            	body:"build report here:
+            	body: 
 		
 		sh 'echo "true"
 			/*<TABLE>
@@ -84,7 +84,7 @@ void sendmail(LogicApp1click)
 			
 		 		</TR>
 		  
-			</TABLE>*/",
+			</TABLE>*/,
 		
             	subject: "Build Success: ", 
             	mimeType: 'text/html', 
