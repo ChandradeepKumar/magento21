@@ -63,20 +63,18 @@ pipeline
             //subject: "Build Success: ${currentBuild.fullDisplayName}", 
             //body: "View build report here: ${env.BUILD_URL}",
           echo 'fine working'
-          sendmail(params.LogicApp1click)
+          sendmail()
 	}
     }
 	
 	
 }
-void sendmail(LogicApp1click)
+void sendmail()
 {
-	if($LogicApp1click == "true")
-	{			
+	//if($LogicApp1click == "true")
+	//{			
 		emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            	body: 
-		
-		"build report here:
+            	body: "build report here:",
 			/*<TABLE>
 		  		<TR>
 					<TD> working </TD>
@@ -84,12 +82,12 @@ void sendmail(LogicApp1click)
 			
 		 		</TR>
 		  
-			</TABLE>*/",
+			</TABLE>*/
 		
             	subject: "Build Success: ", 
             	mimeType: 'text/html', 
             	to: 'chandradeep.kumar@nagarro.com'
-	}
+	//}
 	
 }
 
