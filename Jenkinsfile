@@ -81,7 +81,7 @@ void sendmail()
             	to: 'chandradeep.kumar@nagarro.com'*/
 	
 	
-	mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
+	    mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
             subject: "Build Success: ${currentBuild.fullDisplayName}", 
             body: "View build report here:  <TABLE> <TR> <TD> working </TD> <TD> fine </TD> </TR> </TABLE>"
 	
