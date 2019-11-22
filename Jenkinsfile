@@ -63,15 +63,15 @@ pipeline
             //subject: "Build Success: ${currentBuild.fullDisplayName}", 
             //body: "View build report here: ${env.BUILD_URL}",
           echo 'fine working'
-          sendmail(params.LogicApp1click)
+          sendmail(params.LogicApp1Click)
 	}
     }
 	
 	
 }
-void sendmail(LogicApp1click)
+void sendmail(LogicApp1Click)
 {
-	if(LogicApp1click == "true")
+	if(LogicApp1Click == "true")
 	{			
 		 // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
             	emailext body: "build report here:",
