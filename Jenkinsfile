@@ -74,11 +74,16 @@ void sendmail()
 {
 				
 		 // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-	emailext body: "build report here: <TABLE> <TR> <TD> working </TD> <TD> fine </TD> </TR> </TABLE>",
+	/*emailext body: "build report here: <TABLE> <TR> <TD> working </TD> <TD> fine </TD> </TR> </TABLE>",
 		
             	subject: "Build Success: ", 
             	mimeType: 'text/html', 
-            	to: 'chandradeep.kumar@nagarro.com'
+            	to: 'chandradeep.kumar@nagarro.com'*/
+	
+	
+	mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
+            subject: "Build Success: ${currentBuild.fullDisplayName}", 
+            body: "View build report here:  <TABLE> <TR> <TD> working </TD> <TD> fine </TD> </TR> </TABLE>",
 	
 	
 }
