@@ -63,14 +63,14 @@ pipeline
             //subject: "Build Success: ${currentBuild.fullDisplayName}", 
             //body: "View build report here: ${env.BUILD_URL}",
 		steps{
-			script
-			{
+			//script
+			//{
          			echo 'fine working'
 				if(LogicApp1Click == "true")
 				{
           				sendmail(params.LogicApp1Click)
 				}
-			}
+			//}
 		}
 	}
     }
