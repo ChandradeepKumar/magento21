@@ -71,7 +71,7 @@ pipeline
 }
 void sendmail(LogicApp1click)
 {
-	if($LogicApp1click == "true")
+	if(LogicApp1click == "true")
 	{			
 		 // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
             	emailext body: "build report here:",
