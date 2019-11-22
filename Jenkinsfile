@@ -73,8 +73,8 @@ void sendmail()
 {
 	//if($LogicApp1click == "true")
 	//{			
-		emailext // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
-            	body: "build report here:",
+		 // attachmentsPattern :"serenaTest/linux/SM_AUTOMATION/TestReports/Report/extentreport.html, serenaTest/linux/SerenaPro_AUTOMATION/TestReports/Report/extentreport.html",
+            	emailext body: "build report here:",
 			/*<TABLE>
 		  		<TR>
 					<TD> working </TD>
