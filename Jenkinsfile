@@ -62,10 +62,15 @@ pipeline
             //mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
             //subject: "Build Success: ${currentBuild.fullDisplayName}", 
             //body: "View build report here: ${env.BUILD_URL}",
-          echo 'fine working'
-		if(LogicApp1Click == "true")
-		{
-          		sendmail(params.LogicApp1Click)
+		steps{
+			script
+			{
+         			echo 'fine working'
+				if(LogicApp1Click == "true")
+				{
+          				sendmail(params.LogicApp1Click)
+				}
+			}
 		}
 	}
     }
