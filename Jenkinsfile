@@ -77,7 +77,7 @@ pipeline
 }
 
 stage ('deploy production') {
-	steps{
+	step{
 		script{
 			if(demo)
 			{
