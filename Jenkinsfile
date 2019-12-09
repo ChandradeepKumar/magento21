@@ -73,14 +73,11 @@ pipeline
 
 stage ('deploy') {
 	
-	steps
-	{
-		script{
+	
+		
 			if(LogicApp1click == true)
 			{
 				build job: 'test 123 456 abc',
 				parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 			}
-		}
-	}
 }
