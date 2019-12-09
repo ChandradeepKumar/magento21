@@ -1,3 +1,7 @@
+ parameters {
+
+booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
+ }
 pipeline
 {
 		
@@ -14,7 +18,7 @@ pipeline
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
 	   //booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
-	   booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
+	   //booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
     }
    
   
@@ -72,12 +76,11 @@ pipeline
 }
 
 stage ('deploy production') {
-	steps
-	{
+	
 		if(LogicApp1click == true)
 		{
 			build job: 'test 123 456 abc',
 			parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 		}
-	}
+	
 }
