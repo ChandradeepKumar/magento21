@@ -16,6 +16,9 @@ pipeline
        
 	   //booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
 	   booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
+	   booleanParam(defaultValue: true, name: 'LogicApp2click',description: ' ')
+	   booleanParam(defaultValue: true, name: 'LogicApp3click',description: ' ')
+	   
     }
    
   
@@ -33,28 +36,28 @@ pipeline
 					}
 					steps
 					{
-						build job: 'test 123 456 abc',
+						build job: '1-click-deployment',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 					}
 				}
 				stage ('deploy2') {
 					when{
-						expression { params.LogicApp1click }
+						expression { params.LogicApp2click }
 					}
 					steps
 					{
-						build job: 'test 123 456 abc',
+						build job: '1-click-QA-RC',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 					}
 				}
 				stage ('deploy3') {
 					when{
-						expression { params.LogicApp1click }
+						expression { params.LogicApp3click }
 					}
 					steps
 					{
 						script{
-							demo = params.LogicApp1click
+							demo = params.LogicApp3click
 						}
 						build job: 'test 123 456 abc',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
