@@ -47,7 +47,7 @@ pipeline
 					steps
 					{
 						build job: '1-click-QA-RC',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp2Click', value: params.LogicApp1Click]]
 					}
 				}
 				stage ('deploy3') {
@@ -60,7 +60,7 @@ pipeline
 							demo = params.LogicApp3click
 						}
 						build job: 'test 123 456 abc',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp1Click]]
 					}
 				}
 			}
@@ -72,6 +72,6 @@ stage ('deploy production') {
 	if(demo)
 	{
 		build job: 'test 123 456 abc',
-		parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+		parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp1Click]]
 	}
 }
