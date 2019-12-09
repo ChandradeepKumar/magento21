@@ -73,7 +73,7 @@ pipeline
 
 stage ('deploy') {
 	when{
-		expression { params.DeployQuoteAndOrderWorkflow }
+		expression { params.LogicApp1click }
 	}
 	steps
 	{
