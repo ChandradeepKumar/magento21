@@ -78,10 +78,12 @@ pipeline
 
 stage ('deploy production') {
 	steps{
-		if(demo)
-		{
-			build job: 'test 123 456 abc',
-			parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+		script{
+			if(demo)
+			{
+				build job: 'test 123 456 abc',
+				parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+			}
 		}
 	}
 }
