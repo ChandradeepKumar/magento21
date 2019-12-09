@@ -1,4 +1,4 @@
-def demo;
+def demo=false;
 pipeline
 {
 		
