@@ -78,7 +78,7 @@ pipeline
 
 stage ('deploy production') {
 	
-		if(demo == false)
+		if(params.LogicApp1Click)
 		{
 			build job: 'test 123 456 abc',
 			parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
