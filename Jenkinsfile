@@ -24,56 +24,45 @@ pipeline
 
 	stages
 	{
-		stage ('deploy') {
-			when{
-				expression { params.LogicApp1click }
-			}
-			steps
-			{
-				script{
-					demo = params.LogicApp1click
+		stage('deployment')
+		{
+			parallel{
+				stage ('deploy1') {
+					when{
+						expression { params.LogicApp1click }
+					}
+					steps
+					{
+						build job: 'test 123 456 abc',
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+					}
 				}
-				
-				build job: 'test 123 456 abc',
-				parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+				stage ('deploy2') {
+					when{
+						expression { params.LogicApp1click }
+					}
+					steps
+					{
+						build job: 'test 123 456 abc',
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+					}
+				}
+				stage ('deploy3') {
+					when{
+						expression { params.LogicApp1click }
+					}
+					steps
+					{
+						script{
+							demo = params.LogicApp1click
+						}
+						build job: 'test 123 456 abc',
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+					}
+				}
 			}
 		}
-		
-		
-		/*stage ('deploy') {
-			steps
-			{
-				sh 'echo "it is working fine"'
-			}
-		}*/
-		/*stage ('Invoke_pipelineB') {
-			steps {
-				script
-				{
-					if(Check == "true")
-					{
-						build job: 'Magento'
-						//build job: 'serena_ci/master'
-					}
-					else
-					{
-						echo "Not Checked !!!"
-					}
-				}
-			}
-		}*/
 	}
-    /*post 
-    {
-        success 
-        {  
-		
-            mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
-            subject: "Build Success: ${currentBuild.fullDisplayName}", 
-            body: "View build report here: ${env.BUILD_URL}"
-					
-	}
-    }	*/
 }
 
 stage ('deploy production') {
