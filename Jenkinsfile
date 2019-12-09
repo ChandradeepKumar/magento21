@@ -58,12 +58,13 @@ pipeline
     post 
     {
         success 
-        {      
+        {  
+		
             mail to: "chandradeep.kumar@nagarro.com", //TODO: pick emails from configuration
             subject: "Build Success: ${currentBuild.fullDisplayName}", 
             body: "View build report here: ${env.BUILD_URL}",
 		
-        	echo 'fine working'
+        	
 				
 	}
     }
