@@ -55,7 +55,7 @@ pipeline
 			}
 		}*/
 	}
-    post 
+    /*post 
     {
         success 
         {  
@@ -65,5 +65,5 @@ pipeline
             body: "View build report here: ${env.BUILD_URL}"
 					
 	}
-    }	
+    }	*/
 }
