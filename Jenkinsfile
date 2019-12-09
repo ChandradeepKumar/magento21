@@ -24,6 +24,9 @@ pipeline
 	stages
 	{
 		stage ('deploy') {
+			when{
+				expression { params.LogicApp1click }
+			}
 			steps
 			{
 				build job: 'test 123 456 abc',
@@ -67,3 +70,14 @@ pipeline
 	}
     }	*/
 }
+
+/*stage ('deploy') {
+	when{
+		expression { params.DeployQuoteAndOrderWorkflow }
+	}
+	steps
+	{
+		build job: 'test 123 456 abc',
+		parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+	}
+}*/
