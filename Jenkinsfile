@@ -79,10 +79,10 @@ pipeline
 							
 						}
 						build job: 'Services/QuoteAndOrderWorkFlow',
-						//parameters:   [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
-						parameters: [[$class: 'StringParameterValue', name: 'TargetResourceGroup', value: businessServiceResourceGroup],
-										[$class: 'StringParameterValue', name: 'SourceBranch', value: BusinessServiceBranch],
-										[$class: 'StringParameterValue', name: 'TargetSlot', value: "staging" ]]	
+						parameters:   [[$class: 'BooleanParameterValue', name: 'BusinessServiceGroup', value: businessServiceResourceGroup],
+							      [$class: 'BooleanParameterValue', name: 'BusinessService', value: businessServiceBranch],
+							      [$class: 'StringParameterValue', name: 'TargetSlot', value: "staging" ]]
+						
 					}
 				}
 			}
@@ -94,10 +94,9 @@ stage ('QuoteAndOrderWorkflow') {
 	if(demo)
 	{
 		build job: 'Services/QuoteAndOrderWorkFlow',
-		//parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3click],
-		//parameters:  [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
-			parameters: [[$class: 'StringParameterValue', name: 'TargetResourceGroup', value: businessServiceResourceGroup],
-										[$class: 'StringParameterValue', name: 'SourceBranch', value: BusinessServiceBranch],
-										[$class: 'StringParameterValue', name: 'TargetSlot', value: "production" ]]
+		parameters:   [[$class: 'BooleanParameterValue', name: 'BusinessServiceGroup', value: businessServiceResourceGroup],
+				[$class: 'BooleanParameterValue', name: 'BusinessService', value: businessServiceBranch],
+			        [$class: 'StringParameterValue', name: 'TargetSlot', value: "production" ]]
+			
 	}
 }
