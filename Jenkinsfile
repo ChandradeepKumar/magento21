@@ -15,10 +15,10 @@ pipeline
        // password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
        
 	   //booleanParam(defaultValue: true, name: 'CheckIn',description: ' ')
-	   booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
-	   booleanParam(defaultValue: true, name: 'LogicApp2click',description: ' ')
-	   booleanParam(defaultValue: true, name: 'LogicApp3click',description: ' ')
-	   booleanParam(defaultValue: true, name: 'LogicApp4click',description: ' ')
+	   booleanParam(defaultValue: true, name: 'BusinessService',description: ' ')
+	   booleanParam(defaultValue: true, name: 'Notification',description: ' ')
+	   booleanParam(defaultValue: true, name: 'ProductService',description: ' ')
+	   booleanParam(defaultValue: true, name: 'QuoteAndOrderWorkflow',description: ' ')
 	   
     }
    
@@ -32,43 +32,37 @@ pipeline
 		{
 			parallel{
 				stage ('BusinesssService') {
-					when{
-						expression { params.LogicApp1click }
-					}
+					
 					steps
 					{
 						build job: 'Services/BusinessService',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
+						parameters: [[$class: 'BooleanParameterValue', name: 'BusinessService', value: params.BusinessService]]
 					}
 				}
 				stage ('Notification') {
-					when{
-						expression { params.LogicApp2click }
-					}
+					
 					steps
 					{
 						build job: 'Services/Notification',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp2Click', value: params.LogicApp1Click]]
+						parameters: [[$class: 'BooleanParameterValue', name: 'Notification', value: params.Notification]]
 					}
 				}
 				stage ('ProductService') {
-					when{
-						expression { params.LogicApp3click }
-					}
+					
 					steps
 					{
 						build job: 'Services/ProductService',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3Click]]
+						parameters: [[$class: 'BooleanParameterValue', name: 'ProductService', value: params.ProductService]]
 					}
 				}
 				stage ('QuoteAndOrderWorkflow') {
 					when{
-						expression { params.LogicApp4click }
+						expression { params.QuoteAndOrderWorkflow }
 					}
 					steps
 					{
 						script{
-							demo = params.LogicApp4click
+							demo = params.QuoteAndOrderWorkflow
 						}
 						build job: 'Services/QuoteAndOrderWorkFlow',
 						parameters:   [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
