@@ -61,7 +61,7 @@ pipeline
 						}
 						build job: 'test 123 456 abc',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3Click],
-						parameters:   [$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
+						//parameters:   [$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
 
 					}
 				}
