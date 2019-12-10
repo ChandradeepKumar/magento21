@@ -18,6 +18,7 @@ pipeline
 	   booleanParam(defaultValue: true, name: 'LogicApp1click',description: ' ')
 	   booleanParam(defaultValue: true, name: 'LogicApp2click',description: ' ')
 	   booleanParam(defaultValue: true, name: 'LogicApp3click',description: ' ')
+	   booleanParam(defaultValue: true, name: 'LogicApp4click',description: ' ')
 	   
     }
    
@@ -30,36 +31,46 @@ pipeline
 		stage('deployment')
 		{
 			parallel{
-				stage ('deploy1') {
+				stage ('BusinesssService') {
 					when{
 						expression { params.LogicApp1click }
 					}
 					steps
 					{
-						build job: '1-click-deployment',
+						build job: 'Services/BusinessService',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp1Click', value: params.LogicApp1Click]]
 					}
 				}
-				stage ('deploy2') {
+				stage ('Notification') {
 					when{
 						expression { params.LogicApp2click }
 					}
 					steps
 					{
-						build job: '1-click-QA-RC',
+						build job: 'Services/Notification',
 						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp2Click', value: params.LogicApp1Click]]
 					}
 				}
-				stage ('deploy3') {
+				stage ('ProductService') {
 					when{
 						expression { params.LogicApp3click }
 					}
 					steps
 					{
+						build job: 'Services/ProductService',
+						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3Click]]
+					}
+				}
+				stage ('QuoteAndOrderWorkflow') {
+					when{
+						expression { params.LogicApp4click }
+					}
+					steps
+					{
 						script{
-							demo = params.LogicApp3click
+							demo = params.LogicApp4click
 						}
-						build job: 'Magento',
+						build job: 'Services/QuoteAndOrderWorkFlow',
 						parameters:   [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
 
 					}
@@ -69,10 +80,10 @@ pipeline
 	}
 }
 
-stage ('deploy production') {
+stage ('QuoteAndOrderWorkflow') {
 	if(demo)
 	{
-		build job: 'Magento',
+		build job: 'Services/QuoteAndOrderWorkFlow',
 		//parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3click],
 		parameters:  [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
 	}
