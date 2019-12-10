@@ -55,7 +55,7 @@ pipeline
 	{	stage('Configuring Deployment'){
 			steps{
 				script{
-					businessServiceResourceGroup = getResourceGroupName(params.Environment,'BusinessServices')
+					businessServiceResourceGroup = getResourceGroupName(params.Environment,'BusinessService')
 					//productServiceResourceGroup = getResourceGroupName(params.Environment,'ProductServices')
 					//notificationResourceGroup = getResourceGroupName(params.Environment,'Notification')
 					//saltmarshResourceGroup = getResourceGroupName(params.Environment,'Web')
