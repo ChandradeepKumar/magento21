@@ -27,7 +27,8 @@ pipeline
 	agent any
 
 	stages 
-	{
+	{	
+		
 		stage('deployment')
 		{
 			parallel{
