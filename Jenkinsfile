@@ -60,8 +60,7 @@ pipeline
 							demo = params.LogicApp3click
 						}
 						build job: 'Magento',
-						parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: demo],
-						parameters:   [$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
+						parameters:   [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
 
 					}
 				}
@@ -74,7 +73,7 @@ stage ('deploy production') {
 	if(demo)
 	{
 		build job: 'Magento',
-		parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: demo],
-		parameters:  [$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
+		//parameters: [[$class: 'BooleanParameterValue', name: 'LogicApp3Click', value: params.LogicApp3click],
+		parameters:  [[$class: 'BooleanParameterValue', name: 'LogicApp', value: params.LogicApp]]
 	}
 }
