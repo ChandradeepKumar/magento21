@@ -81,7 +81,7 @@ pipeline
 						build job: 'Services/QuoteAndOrderWorkFlow',
 						parameters:   [[$class: 'BooleanParameterValue', name: 'BusinessServiceGroup', value: businessServiceResourceGroup],
 							      [$class: 'BooleanParameterValue', name: 'BusinessService', value: businessServiceBranch],
-							      [$class: 'StringParameterValue', name: 'TargetSlot', value: "staging" ]]
+							      [$class: 'StringParameterValue', name: 'TargetSlot', value: "Staging" ]]
 						
 					}
 				}
